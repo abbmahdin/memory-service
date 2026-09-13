@@ -1,0 +1,31 @@
+[project]
+name = "memory-service"
+version = "0.1.0"
+description = "Memory-as-a-Service - Agent context persistence"
+requires-python = ">=3.11"
+dependencies = [
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "sqlalchemy>=2.0.35",
+    "asyncpg>=0.30.0",
+    "psycopg2-binary>=2.9.9",
+    "redis>=5.1.0",
+    "pydantic>=2.9.0",
+    "pydantic-settings>=2.5.0",
+    "pgvector>=0.3.0",
+    "alembic>=1.13.0",
+    "httpx>=0.27.0",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8.3.0",
+    "pytest-asyncio>=0.24.0",
+    "pytest-cov>=5.0.0",
+    "fakeredis>=2.24.0",
+    "testcontainers>=4.8.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]
